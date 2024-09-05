@@ -1,5 +1,5 @@
-import Pet from "./Pet";
-import SearchParams from "./SearchParams";
+import Pet from "./Components/Pet";
+import SearchParams from "./Components/SearchParams";
 import "./App.css";
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
     <div>
       <h1>{heading}</h1>
       <SearchParams />
-      
+
       {pets.map((pet) => (
         <Pet name={pet.name} animal={pet.animal} breed={pet.breed} />
       ))}
