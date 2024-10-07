@@ -1,34 +1,24 @@
-import Pet from "./Components/Pet";
 import SearchParams from "./Components/SearchParams";
 import "./App.css";
+// import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+// import Details from "./components/Details";
+// import { useEffect, useState } from "react";
 
 function App() {
-  const heading = "Adopt Me";
-  const pets = [
-    {
-      name: "Luna",
-      animal: "Dog",
-      breed: "Husky",
-    },
-    {
-      name: "Pepper",
-      animal: "Bird",
-      breed: "Parrot",
-    },
-    {
-      name: "Ricky",
-      animal: "Cat",
-      breed: "Mix",
-    },
-  ];
   return (
-    <div>
-      <h1>{heading}</h1>
-      <SearchParams />
+    // <BrowserRouter>
+    //   <header>
+    //     <Link to="/">Adopt Me!</Link>
+    //   </header>
+    //   <Routes>
+    //     <Route path="/" element={<SearchParams />} />
+    //     <Route path="/details/:id" element={<Details />} />
+    //   </Routes>
+    // </BrowserRouter>
 
-      {pets.map((pet) => (
-        <Pet name={pet.name} animal={pet.animal} breed={pet.breed} />
-      ))}
+    <div>
+      <h1>Adopt Me</h1>
+      <SearchParams />
     </div>
   );
 }
