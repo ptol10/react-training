@@ -1,5 +1,8 @@
+import { Link, useNavigate } from "react-router-dom";
+
 function Pet(props) {
-  const { name, animal, breed, images, location } = props;
+  const { name, animal, breed, images, city, state, id } = props;
+  const navigate = useNavigate();
 
   let hero = "http://pets-images.dev-apis.com/pets/none.jpg";
   if (images.length) {
@@ -7,16 +10,23 @@ function Pet(props) {
   }
 
   return (
-    <div className="pet">
+    // <Link to= {`/details/${id}`}>
+    <div
+      className="pet"
+      onClick={() => {
+        navigate(`details/${id}`);
+      }}
+    >
       <div className="image-container">
-        <img src={hero} alt={name}/>
+        <img src={hero} alt={name} />
       </div>
 
       <div className="info">
-      <h1>{name}</h1>
-      <h2>{`${animal} — ${breed} — ${location}`}</h2>
+        <h1>{name}</h1>
+        <h2>{`${animal} - ${breed} - ${city}, ${state}`}</h2>
       </div>
     </div>
+    // </Link>
   );
 }
 
