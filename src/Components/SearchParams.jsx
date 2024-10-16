@@ -8,7 +8,7 @@ const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
 function SearchParams() {
   const [location, setLocation] = useState("");
   const [animal, setAnimal] = useState("");
-  const [pets, filterPets] = usePets();
+  const filterPets = usePets();
 
   function changeLocation(e){
     setLocation(e.target.value);
@@ -67,7 +67,7 @@ function SearchParams() {
         <button type="submit">Submit</button>
       </form>
 
-      <Results pets={pets}/>
+      <Results />
     </div>
   );
 }

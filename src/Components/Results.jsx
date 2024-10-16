@@ -1,8 +1,8 @@
+import { useSelector } from "react-redux";
 import Pet from "./Pet";
 
-export default function Results(props) {
-  const { pets } = props;
-
+export default function Results() {
+  const pets = useSelector(store => store.petSlice.pets)
   return (
     <div className="search">
       {!pets.length ? (

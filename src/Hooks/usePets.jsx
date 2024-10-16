@@ -1,12 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setPets } from "../store/slices/pet-slice";
 
 export default function usePets() {
-  const [pets, setPets] = useState([]);
+
+  const dispatch = useDispatch();
 
   async function fetchPets() {
     const response = await fetch("http://pets-v2.dev-apis.com/pets");
     const data = await response.json();
-    setPets(data.pets);
+    dispatch(setPets(data.pets));
   }
 
   async function filterPets(location, animal) {
@@ -19,5 +22,5 @@ export default function usePets() {
     fetchPets();
   }, []);
 
-  return [pets, filterPets];
+  return filterPets;
 }
